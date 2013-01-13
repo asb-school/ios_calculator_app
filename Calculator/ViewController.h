@@ -32,8 +32,15 @@
 	IBOutlet UIButton *buttonClear;
 	IBOutlet UIButton *buttonEquals;
 	
+	// Display
+	IBOutlet UILabel *numberDisplay;
+	
+	// Current number display
+	NSMutableString *currentNumberString;
+	NSInteger maxDisplaySize;
 }
 
+// Number button actions
 - (IBAction)button1press:(id)sender;
 - (IBAction)button2press:(id)sender;
 - (IBAction)button3press:(id)sender;
@@ -44,5 +51,24 @@
 - (IBAction)button8press:(id)sender;
 - (IBAction)button9press:(id)sender;
 - (IBAction)button0press:(id)sender;
+
+// Operand buttons
+- (IBAction)buttonMultiplyPress:(id)sender;
+- (IBAction)buttonDividePress:(id)sender;
+- (IBAction)buttonSubtractPress:(id)sender;
+- (IBAction)buttonAddPress:(id)sender;
+
+// Function buttons
+- (IBAction)buttonClearPress:(id)sender;
+- (IBAction)buttonEqualsPress:(id)sender;
+
+// Change display
+- (void)changeDisplay;
+
+// Reset display
+- (void)resetDisplay;
+
+// Add to current number string
+- (void)addToCurrentNumberString:(NSInteger) givenNumberToChange;
 
 @end

@@ -151,12 +151,68 @@
 	// Add
 	[buttonAdd setBackgroundImage: imageButtonAdd forState: UIControlStateNormal];
 	[buttonAdd setBackgroundImage: imageButtonAdd_over forState: UIControlStateHighlighted];
+	
+	
+	// Initialize the current number display
+	currentNumberString = [NSMutableString stringWithCapacity: 8];
+	maxDisplaySize = 8;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+// Number button actions
+- (IBAction)button1press:(id)sender
+{
+	[self addToCurrentNumberString: 1];
+	[self changeDisplay];
+}
+
+- (IBAction)button2press:(id)sender
+{
+	[self addToCurrentNumberString: 2];
+	[self changeDisplay];
+}
+
+- (IBAction)button3press:(id)sender
+{
+	[self addToCurrentNumberString: 3];
+	[self changeDisplay];
+}
+
+
+// Function buttons
+- (IBAction)buttonClearPress:(id)sender
+{
+	[self resetDisplay];
+}
+
+
+// Add to current number string
+- (void)addToCurrentNumberString:(NSInteger) givenNumberToChange
+{
+	// Check if string is filled up to capacity
+	if (currentNumberString.length < maxDisplaySize)
+	{
+		// Append number to string
+		[currentNumberString appendString: [NSString stringWithFormat: @"%i", givenNumberToChange]];
+	}
+}
+
+// Change display
+- (void)changeDisplay
+{
+	numberDisplay.text = currentNumberString;
+}
+
+// Reset display
+- (void)resetDisplay
+{
+	[currentNumberString setString: @""];
+	[self changeDisplay];
 }
 
 @end
