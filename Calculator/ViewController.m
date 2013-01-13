@@ -183,6 +183,48 @@
 	[self changeDisplay];
 }
 
+- (IBAction)button4press:(id)sender
+{
+	[self addToCurrentNumberString: 4];
+	[self changeDisplay];
+}
+
+- (IBAction)button5press:(id)sender
+{
+	[self addToCurrentNumberString: 5];
+	[self changeDisplay];
+}
+
+- (IBAction)button6press:(id)sender
+{
+	[self addToCurrentNumberString: 6];
+	[self changeDisplay];
+}
+
+- (IBAction)button7press:(id)sender
+{
+	[self addToCurrentNumberString: 7];
+	[self changeDisplay];
+}
+
+- (IBAction)button8press:(id)sender
+{
+	[self addToCurrentNumberString: 8];
+	[self changeDisplay];
+}
+
+- (IBAction)button9press:(id)sender
+{
+	[self addToCurrentNumberString: 9];
+	[self changeDisplay];
+}
+
+- (IBAction)button0press:(id)sender
+{
+	[self addToCurrentNumberString: 0];
+	[self changeDisplay];
+}
+
 
 // Function buttons
 - (IBAction)buttonClearPress:(id)sender
