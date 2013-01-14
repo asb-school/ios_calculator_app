@@ -38,6 +38,15 @@
 	// Current number display
 	NSMutableString *currentNumberString;
 	NSInteger maxDisplaySize;
+	
+	// Calculate
+	NSInteger operandType;
+	NSInteger totalValue;
+	NSInteger currentValue;
+	NSInteger lastEnteredValue;
+	
+	BOOL clearOnNextOperation;
+
 }
 
 // Number button actions
@@ -62,13 +71,14 @@
 - (IBAction)buttonClearPress:(id)sender;
 - (IBAction)buttonEqualsPress:(id)sender;
 
-// Change display
+// Display functions
 - (void)changeDisplay;
-
-// Reset display
 - (void)resetDisplay;
 
 // Add to current number string
 - (void)addToCurrentNumberString:(NSInteger) givenNumberToChange;
+
+
+- (void)calculate;
 
 @end

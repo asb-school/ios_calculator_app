@@ -156,6 +156,16 @@
 	// Initialize the current number display
 	currentNumberString = [NSMutableString stringWithCapacity: 8];
 	maxDisplaySize = 8;
+	
+	// Init
+	totalValue = 0;
+	currentValue = 0;
+	lastEnteredValue = 0;
+	clearOnNextOperation = FALSE;
+	
+	// Default display
+	numberDisplay.text = [NSString stringWithFormat: @"%i", 0];
+	
 }
 
 - (void)didReceiveMemoryWarning
@@ -226,22 +236,122 @@
 }
 
 
+// Operand buttons
+- (IBAction)buttonMultiplyPress:(id)sender
+{
+	// Set operand type
+	operandType = 1;
+	
+	// Set total value to current number string
+	currentValue = [currentNumberString integerValue];
+	
+	// Clear display
+	clearOnNextOperation = TRUE;
+}
+
+- (IBAction)buttonDividePress:(id)sender
+{
+	// Set operand type
+	operandType = 2;
+	
+	// Set total value to current number string
+	currentValue = [currentNumberString integerValue];
+	
+	// Clear display
+	clearOnNextOperation = TRUE;
+}
+
+- (IBAction)buttonSubtractPress:(id)sender
+{
+	// Set operand type
+	operandType = 3;
+	
+	// Set total value to current number string
+	currentValue = [currentNumberString integerValue];
+	
+	// Clear display
+	clearOnNextOperation = TRUE;
+}
+
+- (IBAction)buttonAddPress:(id)sender
+{
+	// Set operand type
+	operandType = 4;
+	
+	// Set total value to current number string
+	currentValue = [currentNumberString integerValue];
+	
+	// Clear display
+	clearOnNextOperation = TRUE;
+}
+
+
 // Function buttons
 - (IBAction)buttonClearPress:(id)sender
 {
 	[self resetDisplay];
 }
 
+- (IBAction)buttonEqualsPress:(id)sender
+{
+	[self calculate];
+}
+
+
+// Calculate
+- (void)calculate
+{
+	/* Operand types
+	 1: multiply
+	 2: divide
+	 3: subtract
+	 4: add
+	 */
+	
+	switch (operandType)
+	{
+		case 1:
+			totalValue = currentValue * [currentNumberString integerValue];
+			break;
+		case 2:
+			totalValue = currentValue / [currentNumberString integerValue];
+			break;
+		case 3:
+			totalValue = currentValue - [currentNumberString integerValue];
+			break;
+		case 4:
+			totalValue = currentValue + [currentNumberString integerValue];
+			break;
+		default:
+			NSLog(@"Something very stupid happened.");
+			break;
+	}
+	
+	currentValue = lastEnteredValue;
+	
+	currentNumberString = [NSMutableString stringWithFormat: @"%i", totalValue];
+	[self changeDisplay];
+}
+
 
 // Add to current number string
 - (void)addToCurrentNumberString:(NSInteger) givenNumberToChange
 {
+	if (clearOnNextOperation)
+	{
+		[self resetDisplay];
+		clearOnNextOperation = FALSE;
+	}
+	
 	// Check if string is filled up to capacity
 	if (currentNumberString.length < maxDisplaySize)
 	{
 		// Append number to string
 		[currentNumberString appendString: [NSString stringWithFormat: @"%i", givenNumberToChange]];
 	}
+	
+	// Save last entered value
+	lastEnteredValue = [currentNumberString integerValue];
 }
 
 // Change display
