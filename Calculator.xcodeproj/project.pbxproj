@@ -20,6 +20,7 @@
 		4637CB1F16A252130013395C /* button_multiply.png in Resources */ = {isa = PBXBuildFile; fileRef = 4637CB1316A252130013395C /* button_multiply.png */; };
 		4637CB2016A252130013395C /* button_plus_over.png in Resources */ = {isa = PBXBuildFile; fileRef = 4637CB1416A252130013395C /* button_plus_over.png */; };
 		4637CB2116A252130013395C /* button_plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 4637CB1516A252130013395C /* button_plus.png */; };
+		4637CB2716A3A32F0013395C /* number_display.png in Resources */ = {isa = PBXBuildFile; fileRef = 4637CB2616A3A32F0013395C /* number_display.png */; };
 		466A2C8F16A23C1E006D0895 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466A2C8E16A23C1E006D0895 /* UIKit.framework */; };
 		466A2C9116A23C1E006D0895 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466A2C9016A23C1E006D0895 /* Foundation.framework */; };
 		466A2C9316A23C1E006D0895 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 466A2C9216A23C1E006D0895 /* CoreGraphics.framework */; };
@@ -82,6 +83,7 @@
 		4637CB1316A252130013395C /* button_multiply.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_multiply.png; sourceTree = "<group>"; };
 		4637CB1416A252130013395C /* button_plus_over.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_plus_over.png; sourceTree = "<group>"; };
 		4637CB1516A252130013395C /* button_plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_plus.png; sourceTree = "<group>"; };
+		4637CB2616A3A32F0013395C /* number_display.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = number_display.png; sourceTree = "<group>"; };
 		466A2C8A16A23C1E006D0895 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		466A2C8E16A23C1E006D0895 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		466A2C9016A23C1E006D0895 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -230,6 +232,7 @@
 		466A2CC916A23C35006D0895 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				4637CB2616A3A32F0013395C /* number_display.png */,
 				4637CB0A16A252130013395C /* button_clear_over.png */,
 				4637CB0B16A252130013395C /* button_clear.png */,
 				4637CB0C16A252130013395C /* button_divide_over.png */,
@@ -376,6 +379,7 @@
 				4637CB1F16A252130013395C /* button_multiply.png in Resources */,
 				4637CB2016A252130013395C /* button_plus_over.png in Resources */,
 				4637CB2116A252130013395C /* button_plus.png in Resources */,
+				4637CB2716A3A32F0013395C /* number_display.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
