@@ -364,7 +364,7 @@
 - (void)resetDisplay
 {
 	[currentNumberString setString: @""];
-	[self changeDisplay];
+	numberDisplay.text = @"0";
 }
 
 @end
